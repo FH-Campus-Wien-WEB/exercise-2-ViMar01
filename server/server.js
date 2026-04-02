@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'files')));
 app.get('/movies', function (req, res) {
   /* Task 1.2. Remove the line below and eturn the movies from 
      the model as an array */
-  res.sendStatus(404)
+  res.json(Object.values(movieModel.movies))
 })
 
 // Configure a 'get' endpoint for a specific movie
