@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Movie!</title>
+    <link rel="stylesheet" href="edit.css" />
+    <script src="edit.js"></script>
+  </head>
+
+  <body>
+    <form>
+        <input type="hidden" id="imdbID">
+        <div>
+            <label for="Title"> Title</label>
+            <input type="text" id="Title" required>
+        </div>
+         <div>
+            <input type="text">
+        </div>
+         <div>
+            <label for="Released">Released</label>
+            <input type="date" id="Released" required>
+        </div>
+         <div>
+            <label for="Genres">Genres</label>
+            <select id="Genres" multiple required>
+                <option value="Action">Action</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Animation">Animation</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Biography">Biography</option>
+            </select>
+        </div>
+         <div>
+            <label for="Plot">Plot</label>
+            <textarea id="Plot" rows="5" required></textarea>
+        </div>
+         <div>
+            <input>
+        </div>
+        <button type="button"  onclick= "location.href='index.html'">Close</button> 
+    </form>
+  </body>
+</html>

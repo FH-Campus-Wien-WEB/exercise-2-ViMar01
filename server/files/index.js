@@ -30,6 +30,7 @@ window.onload = function () {
 
         const article = document.createElement("article");
         article.classList.add("movie");
+        article.id = movie.imdbID;
 
         const image = document.createElement("img");
         image.classList.add("poster");
@@ -45,6 +46,9 @@ window.onload = function () {
         const buttonEdit = document.createElement("button");
         buttonEdit.classList.add("buttonEdit");
         buttonEdit.textContent = "Edit";
+        buttonEdit.onclick = function() {
+        location.href = 'edit.html?imdbID=' + movie.imdbID
+        }
         
         const title = document.createElement("h2");
         title.classList.add("movieTitel");
