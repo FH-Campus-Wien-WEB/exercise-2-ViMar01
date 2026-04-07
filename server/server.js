@@ -37,19 +37,24 @@ app.put('/movies/:imdbID', function (req, res) {
   const newMovieData = req.body;
   
   if(movieID in movieModel.movies){
+    
+    movieModel.movies[movieID] = newMovieData;
     const movie = movieModel.movies[movieID];
     
-    movie.Title = newMovieData.Title;
-    movie.Runtime = newMovieData.Runtime;
-    movie.Released = newMovieData.Released;
-    movie.Genres = newMovieData.Genres;
-    movie.Metascore = newMovieData.Metascore;
-    movie.imdbRating = newMovieData.imdbRating;
-    movie.Plot = newMovieData.Plot;
-    movie.Directors = newMovieData.Directors;
-    movie.Writers = newMovieData.Writers;
-    movie.Actors = newMovieData.Actors;
-    movie.Poster = newMovieData.Poster;
+    //first try
+    // const movie = movieModel.movies[movieID];
+    
+    // movie.Title = newMovieData.Title;
+    // movie.Runtime = newMovieData.Runtime;
+    // movie.Released = newMovieData.Released;
+    // movie.Genres = newMovieData.Genres;
+    // movie.Metascore = newMovieData.Metascore;
+    // movie.imdbRating = newMovieData.imdbRating;
+    // movie.Plot = newMovieData.Plot;
+    // movie.Directors = newMovieData.Directors;
+    // movie.Writers = newMovieData.Writers;
+    // movie.Actors = newMovieData.Actors;
+    // movie.Poster = newMovieData.Poster;
     
     res.status(200).json(movie);
   
@@ -74,10 +79,7 @@ app.put('/movies/:imdbID', function (req, res) {
 
   }
 })
-/* Task 3.1 and 3.2.
-   - Add a new PUT endpoint
-   - Check whether the movie sent by the client already exists 
-     and continue as described in the assignment */
+
 
 app.listen(3000)
 
